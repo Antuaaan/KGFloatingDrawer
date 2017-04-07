@@ -60,22 +60,6 @@ extension KGDrawerSpringAnimator: KGDrawerAnimating {
         }
     }
 
-    /*
-    public func openDrawer(_ side: KGDrawerSide, drawerView: UIView, centerView: UIView, animated: Bool, complete: @escaping (_ finished: Bool) -> Void) {
-        if (animated) {
-            UIView.animate(withDuration: animationDuration,
-                delay: animationDelay,
-                usingSpringWithDamping: springDamping,
-                initialSpringVelocity: initialSpringVelocity,
-                options: UIViewAnimationOptions.curveLinear,
-                animations: {
-                    self.applyTransforms(side, drawerView: drawerView, centerView: centerView)
-                    
-                }, completion: complete)
-        } else {
-            self.applyTransforms(side, drawerView: drawerView, centerView: centerView)
-        }
-    }*/
     public func dismissDrawer(_ side: KGDrawerSide, drawerView: UIView, centerView: UIView, animated: Bool, complete: @escaping (Bool) -> Void) {
         if (animated) {
             UIView.animate(withDuration: animationDuration,
@@ -90,21 +74,6 @@ extension KGDrawerSpringAnimator: KGDrawerAnimating {
             self.resetTransforms([drawerView, centerView])
         }
     }
-    /*
-    public func dismissDrawer(_ side: KGDrawerSide, drawerView: UIView, centerView: UIView, animated: Bool, complete: @escaping (_ finished: Bool) -> Void) {
-        if (animated) {
-            UIView.animate(withDuration: animationDuration,
-                delay: animationDelay,
-                usingSpringWithDamping: springDamping,
-                initialSpringVelocity: initialSpringVelocity,
-                options: UIViewAnimationOptions.curveLinear,
-                animations: {
-                    self.resetTransforms([drawerView, centerView])
-            }, completion: complete)
-        } else {
-            self.resetTransforms([drawerView, centerView])
-        }
-    }*/
     
     public func willRotateWithDrawerOpen(_ side: KGDrawerSide, drawerView: UIView, centerView: UIView) {
         
