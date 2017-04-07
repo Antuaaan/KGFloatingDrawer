@@ -62,7 +62,7 @@ open class KGDrawerViewController: UIViewController {
     
     // MARK: Interaction
     
-    open func openDrawer(_ side: KGDrawerSide, animated:Bool, complete: @escaping (Bool) -> Void) {
+    open func openDrawer(_ side: KGDrawerSide, animated:Bool, complete: @escaping (_ finished: Bool) -> Void) {
         if currentlyOpenedSide != side {
             if let sideView = drawerView.viewContainerForDrawerSide(side) {
                 let centerView = drawerView.centerViewContainer
@@ -82,7 +82,7 @@ open class KGDrawerViewController: UIViewController {
         currentlyOpenedSide = side
     }
     
-    open func closeDrawer(_ side: KGDrawerSide, animated: Bool, complete: @escaping (Bool) -> Void) {
+    open func closeDrawer(_ side: KGDrawerSide, animated: Bool, complete: @escaping (_ finished: Bool) -> Void) {
         if (currentlyOpenedSide == side && currentlyOpenedSide != .none) {
             if let sideView = drawerView.viewContainerForDrawerSide(side) {
                 let centerView = drawerView.centerViewContainer
